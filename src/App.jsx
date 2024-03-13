@@ -4,6 +4,7 @@ import React, { Suspense } from 'react'
 import ChildRef from './components/refs/ChildRef'
 import ParentRef from './components/refs/ParentRef'
 import Parent from './components/imperativeHandle/Parent'
+import ErrorPage from './pages/ErrorPage'
 
 const Home = React.lazy(() => import("./components/Home"))
 const About = React.lazy(() => import("./components/About"))
@@ -23,6 +24,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
       </Suspense>
